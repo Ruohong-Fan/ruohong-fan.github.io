@@ -1,0 +1,119 @@
+/* General Body Styles */
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+/* Container for responsive layout */
+.container {
+    width: 80%;
+    margin: auto;
+    overflow: hidden;
+    padding: 0 20px;
+}
+
+/* Header Styling */
+header {
+    background: #333;
+    color: #fff;
+    padding: 1rem 0;
+    text-align: center;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 2.5rem;
+}
+
+header p {
+    font-size: 1.2rem;
+}
+
+/* Navigation Styling (basic, can be expanded) */
+nav {
+    text-align: center;
+    padding: 0.5rem 0;
+    background: #444;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+}
+
+nav ul li {
+    display: inline;
+    margin-right: 20px;
+}
+
+nav a {
+    color: #fff;
+    text-decoration: none;
+}
+
+/* Main Content Styling */
+main {
+    padding: 20px 0;
+}
+
+main section {
+    margin-bottom: 20px;
+    /* padding: 20px; */ /* Removed as .container now handles horizontal padding */
+    background-color: #fff;
+    border-radius: 8px;
+}
+
+main section h2 {
+    color: #333;
+    border-bottom: 2px solid #eee;
+    padding-bottom: 10px;
+}
+
+/* Project Specific Styling */
+#projects div {
+    margin-bottom: 15px;
+    padding-bottom: 15px;
+    border-bottom: 1px dotted #ccc;
+}
+
+#projects div:last-child {
+    border-bottom: none; /* Remove border for the last project item */
+}
+
+#projects h3 {
+    margin-top: 0;
+    color: #555;
+}
+
+/* Footer Styling */
+footer {
+    text-align: center;
+    padding: 1rem 0;
+    background: #333;
+    color: #fff;
+    margin-top: 20px;
+}
+
+/* Basic Responsive Adjustments */
+@media (max-width: 768px) {
+    .container {
+        width: 95%;
+        padding: 0 10px;
+    }
+
+    header h1 {
+        font-size: 2rem;
+    }
+
+    header p {
+        font-size: 1rem;
+    }
+
+    main section {
+        /* padding: 15px; */ /* Removed as .container now handles horizontal padding */
+    }
+}
