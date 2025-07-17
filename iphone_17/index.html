@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Podcast Player</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <style>
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f0f2f5;
+    font-family: sans-serif;
+}
+
+.player-container {
+    background-color: #fff;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    padding: 30px;
+    text-align: center;
+}
+
+.cover-image {
+    width: 200px;
+    height: 200px;
+    background-color: #e0e0e0;
+    border-radius: 15px;
+    margin: 0 auto 20px;
+    background-image: url('https://lf0-fast-deliver-inner.bytedance.net/obj/eden-internal/upkv/ljhwZthlaukjlkulzlp/picture_pages/iphone17.jpeg');
+    background-size: cover;
+    background-position: center;
+}
+
+.title {
+    font-size: 20px;
+    margin: 0;
+}
+
+.artist {
+    font-size: 14px;
+    color: #888;
+    margin: 5px 0 20px;
+}
+
+.progress-container {
+    background-color: #e0e0e0;
+    border-radius: 5px;
+    cursor: pointer;
+    margin: 20px 0;
+    height: 4px;
+    width: 100%;
+}
+
+.progress {
+    background-color: #00995E;
+    border-radius: 5px;
+    height: 100%;
+    width: 0%;
+    transition: width 0.1s linear;
+}
+
+.controls button {
+    background-color: #fff;
+    border: 0;
+    color: #00995E;
+    font-size: 36px; /* Adjusted for Material Icons */
+    cursor: pointer;
+    padding: 0;
+    margin: 0 15px;
+    width: 50px; 
+    height: 50px;
+    border-radius: 50%;
+    /* display: flex;
+    justify-content: center;
+    align-items: center; */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+}
+
+.material-icons {
+    font-family: 'Material Icons';
+    font-weight: normal;
+    font-style: normal;
+    display: inline-block;
+    line-height: 1;
+    text-transform: none;
+    letter-spacing: normal;
+    word-wrap: normal;
+    white-space: nowrap;
+    direction: ltr;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+    -moz-osx-font-smoothing: grayscale;
+    font-feature-settings: 'liga';
+}
+    </style>
+</head>
+<body>
+    <div class="player-container">
+        <div class="cover-image"></div>
+        <div class="track-info">
+            <h2 class="title">iPhone 17 对比 16：值得关注的几大升级点</h2>
+        </div>
+        <div class="progress-container">
+            <div class="progress"></div>
+        </div>
+        <div class="controls">
+            <button class="play-pause-btn"><i class="material-icons">play_arrow</i></button>
+        </div>
+        <audio id="audio" src="https://broadcast.tos-cn-beijing.volces.com/男：嘿，咱_57a7951a.mp3"></audio>
+    </div>
+    <script>
+const audio = document.getElementById('audio');
+const playPauseBtn = document.querySelector('.play-pause-btn');
+const progress = document.querySelector('.progress');
+const progressContainer = document.querySelector('.progress-container');
+
+function playAudio() {
+    audio.play();
+    playPauseBtn.innerHTML = '<i class="material-icons">pause</i>';
+}
+
+function pauseAudio() {
+    audio.pause();
+    playPauseBtn.innerHTML = '<i class="material-icons">play_arrow</i>';
+}
+
+function togglePlayPause() {
+    if (audio.paused) {
+        playAudio();
+    } else {
+        pauseAudio();
+    }
+}
+
+function updateProgress(e) {
+    const { duration, currentTime } = e.srcElement;
+    const progressPercent = (currentTime / duration) * 100;
+    progress.style.width = `${progressPercent}%`;
+}
+
+function setProgress(e) {
+    const width = this.clientWidth;
+    const clickX = e.offsetX;
+    const duration = audio.duration;
+
+    audio.currentTime = (clickX / width) * duration;
+}
+
+playPauseBtn.addEventListener('click', togglePlayPause);
+audio.addEventListener('timeupdate', updateProgress);
+progressContainer.addEventListener('click', setProgress);
+
+audio.addEventListener('ended', () => {
+    playPauseBtn.innerHTML = '<i class="material-icons">play_arrow</i>';
+});
+    </script>
+</body>
+</html>
