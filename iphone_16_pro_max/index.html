@@ -66,8 +66,12 @@ body {
     color: #ff4500;
     font-size: 20px;
     cursor: pointer;
-/*     padding: 10px; */
-/*     margin: 0 15px; */
+    padding: 0;
+    margin: 0 15px;
+    width: 50px; 
+    height: 50px;
+    border-radius: 50%;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
 }
     </style>
 </head>
@@ -81,7 +85,7 @@ body {
             <div class="progress"></div>
         </div>
         <div class="controls">
-            <button class="play-pause-btn">&#160;&#9658;&#160;</button>
+            <button class="play-pause-btn"">&#160;&#9658;</button>
         </div>
         <audio id="audio" src="https://broadcast.tos-cn-beijing.volces.com/男：嘿，咱_b0ac5713.mp3"></audio>
     </div>
@@ -98,7 +102,7 @@ function playAudio() {
 
 function pauseAudio() {
     audio.pause();
-    playPauseBtn.innerHTML = '&#160;&#9658;&#160;';
+    playPauseBtn.innerHTML = '&#160;&#9658;';
 }
 
 function togglePlayPause() {
@@ -128,7 +132,7 @@ audio.addEventListener('timeupdate', updateProgress);
 progressContainer.addEventListener('click', setProgress);
 
 audio.addEventListener('ended', () => {
-    playPauseBtn.innerHTML = '&#160;&#9658;&#160;';
+    playPauseBtn.innerHTML = '&#160;&#9658;';
 });
     </script>
 </body>
