@@ -1,0 +1,64 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f0f2f5;
+    font-family: sans-serif;
+}
+
+.player-container {
+    background-color: #fff;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    padding: 30px;
+    text-align: center;
+}
+
+.cover-image {
+    width: 200px;
+    height: 200px;
+    background-color: #e0e0e0;
+    border-radius: 15px;
+    margin: 0 auto 20px;
+    background-image: url('https://lf0-fast-deliver-inner.bytedance.net/obj/eden-internal/upkv/ljhwZthlaukjlkulzlp/picture_pages/iphone%2016%20pro%20max.jpeg');
+    background-size: cover;
+}
+
+.title {
+    font-size: 24px;
+    margin: 0;
+}
+
+.artist {
+    font-size: 14px;
+    color: #888;
+    margin: 5px 0 20px;
+}
+
+.progress-container {
+    background-color: #e0e0e0;
+    border-radius: 5px;
+    cursor: pointer;
+    margin: 20px 0;
+    height: 4px;
+    width: 100%;
+}
+
+.progress {
+    background-color: #ff4500;
+    border-radius: 5px;
+    height: 100%;
+    width: 0%;
+    transition: width 0.1s linear;
+}
+
+.controls button {
+    background-color: #fff;
+    border: 0;
+    color: #ff4500;
+    font-size: 20px;
+    cursor: pointer;
+    padding: 10px;
+    margin: 0 15px;
+}
