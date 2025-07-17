@@ -82,7 +82,7 @@ body {
             <div class="progress"></div>
         </div>
         <div class="controls">
-            <button class="play-pause-btn">&#9658;</button>
+            <button class="play-pause-btn">&#160;&#9658;&#160;</button>
         </div>
         <audio id="audio" src="https://broadcast.tos-cn-beijing.volces.com/男：嘿，咱_b0ac5713.mp3"></audio>
     </div>
@@ -99,7 +99,7 @@ function playAudio() {
 
 function pauseAudio() {
     audio.pause();
-    playPauseBtn.innerHTML = '&#9658;';
+    playPauseBtn.innerHTML = '&#160;&#9658;&#160;';
 }
 
 function togglePlayPause() {
@@ -129,7 +129,7 @@ audio.addEventListener('timeupdate', updateProgress);
 progressContainer.addEventListener('click', setProgress);
 
 audio.addEventListener('ended', () => {
-    playPauseBtn.innerHTML = '&#9658;';
+    playPauseBtn.innerHTML = '&#160;&#9658;&#160;';
 });
     </script>
 </body>
